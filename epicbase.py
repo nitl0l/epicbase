@@ -26,7 +26,7 @@ class Epicbase(AutoShardedBot):
         asyncio.run(self.on_startup())
 
     async def on_startup(self):
-        self.database = await Tortoise.init(
+        await Tortoise.init(
             db_url="sqlite://epicbase.db", modules={"models": ["cogs.models"]}
         )
         await Tortoise.generate_schemas(safe=True)
@@ -47,7 +47,7 @@ class Epicbase(AutoShardedBot):
         )
 
     async def on_ready(self):
-        self.load_extensions("cogs", package="", recursive=True)
+        self.load_extension("cogs.core")
         await self.sync_commands(method="auto")
 
 

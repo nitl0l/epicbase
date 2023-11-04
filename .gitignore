@@ -163,4 +163,4 @@ cython_debug/
 assets/
 
 # Database files
-*.db
+*.db*

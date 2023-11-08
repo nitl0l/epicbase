@@ -34,7 +34,7 @@ Your .env file should follow this format
 
 Deploy the bot
 ```bash
-  python3 src/epicbase.py
+  python3 epicbase.py
 ```
 ## Authors
 
